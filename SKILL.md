@@ -8,13 +8,14 @@ metadata:
 
 # code-quality-check
 
-**Single skill for all code quality.** Runs 3 pillars:
+**Single skill for all code quality.** Runs 4 pillars:
 
 | Pillar | Check | Tool |
 |--------|-------|------|
 | 1 | Semantic (AI slop) | no_ai_slop |
 | 2 | Structure | TypeScript |
 | 3 | Syntax | Biome/Prettier |
+| 4 | Hygiene | knip |
 
 ## Run
 
@@ -26,7 +27,7 @@ npx code-quality-check
 code-quality-check
 ```
 
-## 3 Pillars
+## 4 Pillars
 
 ### Pillar 1: no_ai_slop
 - Generic names (`data`, `handleClick`)
@@ -43,6 +44,11 @@ code-quality-check
 - Formatting
 - Import order
 - Line endings
+
+### Pillar 4: Unused Detection
+- Unused files
+- Unused dependencies
+- Unused exports
 
 ## 3rd-Party Library Exceptions
 
