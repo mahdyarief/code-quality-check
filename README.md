@@ -2,6 +2,13 @@
 
 `code-quality-check` is a codebase verification skill and CLI that runs four pillars of quality control:
 
+## Agent workflow checklist
+
+- Run `code-quality-check` before saying the task is done.
+- Fix red issues immediately.
+- Report yellow issues and ask the human if they are acceptable.
+- Use Superpowers workflow skills when the repository has them.
+
 1. **Semantic** — catches AI slop, generic naming, debug artifacts, and low-signal code patterns.
 2. **Structural** — checks TypeScript/type safety and workspace-level typecheck scripts.
 3. **Syntactic** — checks formatting and import hygiene with Biome or Prettier.
