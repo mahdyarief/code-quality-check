@@ -8,6 +8,17 @@ metadata:
 
 # code-quality-check
 
+## Default OpenCode trigger phrases
+
+If you're using OpenCode with default discovery (no custom slash commands), these user requests should trigger this skill:
+
+- "run code quality check"
+- "verify before completion"
+- "check for AI slop"
+- "run lint / formatting check"
+- "typecheck"
+- "find unused code / unused exports / unused dependencies"
+
 **Single skill for all code quality.** Runs 4 pillars:
 
 | Pillar | Check | Tool |

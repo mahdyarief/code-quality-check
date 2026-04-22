@@ -9,6 +9,17 @@
 - Report yellow issues and ask the human if they are acceptable.
 - Use Superpowers workflow skills when the repository has them.
 
+## Default OpenCode trigger phrases
+
+OpenCode (default pattern, no custom commands) will usually choose this skill if the user asks things like:
+
+- "run code quality check"
+- "verify before commit" / "verify before PR" / "verify before completion"
+- "check for AI slop"
+- "typecheck"
+- "run prettier" / "run biome" / "lint this"
+- "find unused code" / "unused exports" / "unused dependencies"
+
 1. **Semantic** — catches AI slop, generic naming, debug artifacts, and low-signal code patterns.
 2. **Structural** — checks TypeScript/type safety and workspace-level typecheck scripts.
 3. **Syntactic** — checks formatting and import hygiene with Biome or Prettier.
