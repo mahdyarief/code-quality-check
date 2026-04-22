@@ -1,4 +1,4 @@
-const { run } = require("../utils.cjs");
+const { run } = require("../core/utils.cjs");
 
 module.exports = {
   name: "🟢 Category 11: Commit History Hygiene",

@@ -28,7 +28,7 @@ module.exports = {
     }
 
     // Diff size alarm
-    const { run } = require("../utils.cjs");
+    const { run } = require("../core/utils.cjs");
     const diffCmd = context.isExplicit 
       ? `git diff main --shortstat -- ${context.changedFiles.join(" ")}`
       : `git diff main --shortstat`;

@@ -95,7 +95,7 @@ const touchedFiles = run("git", ["diff", upstreamRef, "--name-only", "--diff-fil
 
 section("3 Pillars Verification");
 
-const noAiSlopPath = path.resolve(__dirname, '..', 'src', 'no_ai_slop', 'detect_slop.cjs');
+const enginePath = path.resolve(__dirname, '..', 'src', 'engine.cjs');
 
 log(`Detected Package Manager: ${pm}`);
 log(`Comparing against: ${upstreamRef}`);
@@ -103,8 +103,8 @@ log(`Comparing against: ${upstreamRef}`);
 // --- Pillar 1: no_ai_slop ---
 log("Pillar 1/3: no_ai_slop...");
 try {
-  safeExec("node", [noAiSlopPath, ...touchedFiles], projectRoot);
-  success("Pillar 1/3: no_ai_slop passed.");
+  safeExec("node", [enginePath, ...touchedFiles], projectRoot);
+  success("Pillar 1/3: semantic checks passed.");
 } catch (e) {
   error("Pillar 1/3 failed.");
   process.exit(1);

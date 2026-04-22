@@ -1,4 +1,4 @@
-const { run } = require("../utils.cjs");
+const { run } = require("../core/utils.cjs");
 
 // Critical rendering/layout signals that indicate a silent regression
 // when a diff touches z-ordering, cursor layering, or annotation rendering.

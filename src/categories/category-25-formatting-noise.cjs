@@ -1,5 +1,5 @@
 // ignore-sandi-metz
-const { run } = require("../utils.cjs");
+const { run } = require("../core/utils.cjs");
 
 // Threshold: if whitespace-ignored diff is less than this fraction of the
 // full diff, the PR is mostly formatting churn, not logic.
