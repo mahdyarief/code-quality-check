@@ -26,4 +26,4 @@ None detected. ✅
   - *Tolerable Debt*: 0
 
 > [!TIP]
-> PR looks clean! Excellent work.
+> Code looks clean! Excellent work.

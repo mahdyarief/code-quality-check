@@ -1,6 +1,6 @@
 ---
 name: code-quality-check
-description: Unified code quality skill - semantic, structural, syntactic checks in 3 pillars.
+description: 3-pillar codebase verification skill - semantic, structural, and syntactic checks.
 metadata:
   author: mahdyarief
   version: "1.0.0"

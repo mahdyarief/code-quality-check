@@ -1,7 +1,7 @@
 {
   "name": "code-quality-check",
   "version": "1.0.0",
-  "description": "Unified code quality skill - semantic, structural, and syntactic checks.",
+  "description": "3-pillar codebase verification skill - semantic, structural, and syntactic checks.",
   "type": "commonjs",
   "bin": {
     "code-quality-check": "bin/code-quality.js"
