@@ -1,16 +1,21 @@
-# Pr Quality Check - Quick Run
+# code-quality-check
 
-Runs all 3 pillars: no_ai_slop → typecheck → biome
+A unified code quality tool that runs 3 pillars of checks:
+
+1. **Semantic**: Catches AI slop, generic naming, debug artifacts (`no_ai_slop`).
+2. **Structural**: Validates types (`TypeScript`).
+3. **Syntactic**: Checks formatting and syntax (`Biome` or `Prettier`).
+
+## Installation
+
+This is intended to be used as an O‍penCode skill or a global package.
+
+```bash
+npm install -g code-quality-check
+```
 
 ## Usage
 
 ```bash
-node .opencode/skills/pr_quality_check/scripts/run_3_pillars.cjs
+code-quality-check
 ```
-
-Or simply:
-```bash
-skill pr_quality_check
-```
-
-This performs semantic, structural, and syntactic checks on your code.

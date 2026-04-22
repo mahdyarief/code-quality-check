@@ -1,9 +1,12 @@
 ---
-name: pr_quality_check
+name: code-quality-check
 description: Unified code quality skill - semantic, structural, syntactic checks in 3 pillars.
+metadata:
+  author: mahdyarief
+  version: "1.0.0"
 ---
 
-# pr_quality_check
+# code-quality-check
 
 **Single skill for all code quality.** Runs 3 pillars:
 
@@ -15,8 +18,12 @@ description: Unified code quality skill - semantic, structural, syntactic checks
 
 ## Run
 
+Execute the tool via the CLI (from within your project root):
+
 ```bash
-node ~/.agents/skills/pr_quality_check/scripts/run_3_pillars.cjs
+npx code-quality-check
+# Or if installed globally/linked:
+code-quality-check
 ```
 
 ## 3 Pillars
@@ -55,10 +62,12 @@ Level 3: bun biome check --write <files>
 ## Files
 
 ```
-pr_quality_check/
+code-quality-check/
 ├── SKILL.md
-└── scripts/
-    ├── run_3_pillars.cjs   ← Entry point
+├── package.json
+├── bin/
+│   └── code-quality.js     ← CLI Entry point
+└── src/
     └── no_ai_slop/
         ├── detect_slop.cjs
         └── src/            ← Categories
