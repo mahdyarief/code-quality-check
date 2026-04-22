@@ -4,7 +4,7 @@
 None detected. ✅
 
 ## 🟡 Yellow Issues (Recommend to handle with human observation)
-None detected. ✅
+- **Could not execute Unused Detector (knip failed to run).**
 
 ## 🏛️ Architectural Debt (Informational)
 
@@ -19,11 +19,11 @@ None detected. ✅
 
 ## Summary
 - 🔴 **Red Issues (Must Be Fix)**: 0
-- 🟡 **Yellow Issues (Recommend to handle with human observation)**: 0
+- 🟡 **Yellow Issues (Recommend to handle with human observation)**: 1
 - 🏛️ **Architectural Debt (Informational)**: 0
   - *God Functions*: 0
   - *Bloated Methods*: 0
   - *Tolerable Debt*: 0
 
-> [!TIP]
-> PR looks clean! Excellent work.
+> [!WARNING]
+> **REVIEW RECOMMENDED.** Review yellow warnings and architectural debt. Choose structural improvements wisely.
