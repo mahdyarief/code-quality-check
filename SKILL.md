@@ -1,6 +1,6 @@
 ---
 name: code-quality-check
-description: 3-pillar codebase verification skill - semantic, structural, and syntactic checks.
+description: Use when verifying code changes, catching AI slop, checking type safety, and finding unused code before completion.
 metadata:
   author: mahdyarief
   version: "1.0.0"
@@ -74,7 +74,8 @@ code-quality-check/
 ├── bin/
 │   └── code-quality.js     ← CLI Entry point
 └── src/
-    └── no_ai_slop/
-        ├── detect_slop.cjs
-        └── src/            ← Categories
+    ├── categories/         ← Semantic checks
+    ├── core/               ← Shared context/reporter/runner utilities
+    ├── detectors/          ← Heavy analyzers like knip
+    └── engine.cjs
 ```
