@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 /**
- * code-quality-check skill - 3 Pillars Runner
+ * code-quality-check skill - 4 Pillars Runner
  *
- * This skill unifies code quality into 3 pillars:
- * - Pillar 1: no_ai_slop (semantic) - in src/no_ai_slop/ folder
+ * This skill unifies code quality into 4 pillars:
+ * - Pillar 1: No AI Slop (semantic)
  * - Pillar 2: TypeScript (structure)
  * - Pillar 3: Biome/Prettier (syntax)
+ * - Pillar 4: Unused Detection (hygiene)
  *
  * Run from project root: code-quality-check
  */
@@ -93,25 +94,25 @@ const touchedFiles = run("git", ["diff", upstreamRef, "--name-only", "--diff-fil
   .split("\n")
   .filter(f => (f.endsWith(".ts") || f.endsWith(".tsx")) && fs.existsSync(path.join(projectRoot, f)));
 
-section("3 Pillars Verification");
+section("4 Pillars Verification");
 
 const enginePath = path.resolve(__dirname, '..', 'src', 'engine.cjs');
 
 log(`Detected Package Manager: ${pm}`);
 log(`Comparing against: ${upstreamRef}`);
 
-// --- Pillar 1: no_ai_slop ---
-log("Pillar 1/3: no_ai_slop...");
+// --- Pillar 1: No AI Slop ---
+log("Pillar 1/4: No AI Slop...");
 try {
   safeExec("node", [enginePath, ...touchedFiles], projectRoot);
-  success("Pillar 1/3: semantic checks passed.");
+  success("Pillar 1/4: semantic checks passed.");
 } catch (e) {
-  error("Pillar 1/3 failed.");
+  error("Pillar 1/4 failed.");
   process.exit(1);
 }
 
 // --- Pillar 2: TypeScript ---
-log("Pillar 2/3: typecheck...");
+log("Pillar 2/4: typecheck...");
 let pkg;
 try {
   pkg = JSON.parse(fs.readFileSync(path.join(projectRoot, "package.json"), "utf8"));
@@ -125,9 +126,9 @@ if (scripts.typecheck) {
   try {
     const cmdParts = pmRun.split(" ");
     safeExec(cmdParts[0], [...cmdParts.slice(1), "typecheck"], projectRoot);
-    success("Pillar 2/3: typecheck passed.");
+    success("Pillar 2/4: typecheck passed.");
   } catch (e) {
-    error("Pillar 2/3 failed.");
+    error("Pillar 2/4 failed.");
     process.exit(1);
   }
 } else {
@@ -182,10 +183,10 @@ if (scripts.typecheck) {
   }
 
   if (typecheckFailed) {
-    error("Pillar 2/3 failed.");
+    error("Pillar 2/4 failed.");
     process.exit(1);
   }
-  success("Pillar 2/3: typecheck passed.");
+  success("Pillar 2/4: typecheck passed.");
 }
 
 // --- Pillar 3: Linter ---
@@ -198,7 +199,7 @@ const hasPrettier =
   pkg.prettier;
 
 if ((hasBiome || hasPrettier) && touchedFiles.length > 0) {
-  log("Pillar 3/3: linter...");
+  log("Pillar 3/4: linter...");
   try {
     const cmdParts = pmX.split(" ");
     if (hasBiome) {
@@ -210,9 +211,9 @@ if ((hasBiome || hasPrettier) && touchedFiles.length > 0) {
       if (pm === "bun") prettierArgs.unshift("--bun");
       safeExec(cmdParts[0], prettierArgs, projectRoot);
     }
-    success("Pillar 3/3: linter passed.");
+    success("Pillar 3/4: linter passed.");
   } catch (e) {
-    error("Pillar 3/3 failed: lint/format errors.");
+    error("Pillar 3/4 failed: lint/format errors.");
     process.exit(1);
   }
 } else if (!hasBiome && !hasPrettier) {
@@ -221,5 +222,5 @@ if ((hasBiome || hasPrettier) && touchedFiles.length > 0) {
   log("No touched files - skipping linter.");
 }
 
-success("All 3 pillars passed!");
+success("All 4 pillars passed!");
 log("Code Quality Verification finished.");

@@ -23,7 +23,7 @@ If you're using OpenCode with default discovery (no custom slash commands), thes
 
 | Pillar | Check | Tool |
 |--------|-------|------|
-| 1 | Semantic (AI slop) | no_ai_slop |
+| 1 | Semantic (AI slop) | No AI Slop |
 | 2 | Structure | TypeScript |
 | 3 | Syntax | Biome/Prettier |
 | 4 | Hygiene | knip |
@@ -40,7 +40,7 @@ code-quality-check
 
 ## 4 Pillars
 
-### Pillar 1: no_ai_slop
+### Pillar 1: No AI Slop
 - Generic names (`data`, `handleClick`)
 - Empty catches
 - Debug artifacts
