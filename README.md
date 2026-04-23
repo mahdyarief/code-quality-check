@@ -1,6 +1,9 @@
 # code-quality-check
 
-`code-quality-check` is a codebase verification skill and CLI that runs four pillars of quality control:
+**Owner**: [mahdyarief](https://github.com/mahdyarief)
+**License**: MIT
+
+A codebase verification skill and CLI that runs four pillars of quality control:
 
 ## Agent workflow checklist
 

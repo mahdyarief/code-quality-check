@@ -1,7 +1,7 @@
 {
   "name": "code-quality-check",
   "version": "1.0.0",
-  "description": "3-pillar codebase verification skill - semantic, structural, and syntactic checks.",
+  "description": "4-pillar codebase verification - semantic, structural, syntactic, and hygiene checks.",
   "type": "commonjs",
   "bin": {
     "code-quality-check": "bin/code-quality.js"
@@ -10,11 +10,21 @@
     "start": "node bin/code-quality.js"
   },
   "keywords": [
-    "o‍pencode",
+    "opencode",
     "skill",
     "quality",
-    "lint"
+    "lint",
+    "ai-slop",
+    "code-quality"
   ],
   "author": "mahdyarief",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahdyarief/code-quality-check"
+  },
+  "homepage": "https://github.com/mahdyarief/code-quality-check#readme",
+  "bugs": {
+    "url": "https://github.com/mahdyarief/code-quality-check/issues"
+  }
 }
